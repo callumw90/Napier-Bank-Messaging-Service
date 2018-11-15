@@ -21,6 +21,7 @@ namespace NapierBank.Model
         {
 
             //Console.WriteLine("Message Processor: " + header + sender + messageBody + subject);
+            //Ensures header is 9 characters long
             if (header.Length != 9)
             {
                 MessageBox.Show("Invalid Header Length");
@@ -31,9 +32,10 @@ namespace NapierBank.Model
 
             }
 
-
+            
             if (header.ToUpper().Contains("S"))
             {
+                //cuts off the message length if its over 140
                 if (messageBody.Length > 140)
                 {
                     messageBody = messageBody.Substring(0, 140);
@@ -44,16 +46,19 @@ namespace NapierBank.Model
 
             else if (header.ToUpper().Contains("E"))
             {
+                //cuts message off at 1028 characters
                 if (messageBody.Length > 1028)
                 {
                     messageBody = messageBody.Substring(0, 1028);
                 }
 
+                //cuts subject to 20 characters
                 if (subject.Length > 20)
                 {
                     subject = subject.Substring(0, 20);
                 }
 
+                //check subject if its SIR or Standard message
                 if (subject.ToUpper().Contains("SIR"))
                 {
                     return new SIR_Email(header, sender, messageBody, subject);
@@ -66,11 +71,13 @@ namespace NapierBank.Model
 
             else if (header.ToUpper().Contains("T"))
             {
+                //keeps sender to 15 characters 
                 if (sender.Length > 15)
                 {
                     sender = sender.Substring(0,15);
                 }
 
+                //limits message to 140 chars
                 if (messageBody.Length > 140)
                 {
                     messageBody = messageBody.Substring(0, 140);
