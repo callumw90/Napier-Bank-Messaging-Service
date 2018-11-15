@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="New Message" Height="386" Width="713">
     <Grid>
-        <Button x:Name="btn_exit" Content="Exit" HorizontalAlignment="Left" Margin="147,294,0,0" VerticalAlignment="Top" Width="75" IsCancel="True" Click="btn_exit_Click"/>
+        <Button x:Name="btn_exit" Content="Exit" HorizontalAlignment="Left" Margin="147,294,0,0" VerticalAlignment="Top" Width="75" Click="btn_exit_Click"/>
         <Button x:Name="btn_clear" Content="Clear" HorizontalAlignment="Left" Margin="227,294,0,0" VerticalAlignment="Top" Width="75" Click="btn_clear_Click"/>
         <Button x:Name="btn_process" Content="Process" HorizontalAlignment="Left" Margin="307,294,0,0" VerticalAlignment="Top" Width="75" Click="btn_process_Click" IsDefault="True"/>
         <Label x:Name="lbl_header" Content="Header" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="6,4,0,0" />
@@ -23,6 +23,7 @@
         <Button x:Name="btn_getStats" Content="Get Twitter Stats" HorizontalAlignment="Left" Height="20" Margin="498,294,0,0" VerticalAlignment="Top" Width="106" Click="btn_getStats_Click"/>
         <Label x:Name="lbl_stats" Content="Stats" HorizontalAlignment="Left" Margin="434,0,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btn_getSIR" Content="Get SIR List" HorizontalAlignment="Left" Height="20" Margin="498,319,0,0" VerticalAlignment="Top" Width="106" Click="btn_getSIR_Click"/>
+        <Button x:Name="btn_viewMessage" Content="View Processed Messages" HorizontalAlignment="Left" Margin="147,325,0,0" VerticalAlignment="Top" Width="155" RenderTransformOrigin="1.4,-0.188" Click="btn_viewMessage_Click"/>
 
     </Grid>
 </Window>

@@ -200,12 +200,12 @@ namespace NapierBank
          */
         private void saveFile(string fileName)
         {
-            string path = @"D:/University/Year 3/TR1/Software Engineering/Napier Bank C#/NapierBank/NapierBank/resources/";
+            string path = @"D:/University/Year 3/TR1/Software Engineering/Napier Bank C#/NapierBank/NapierBank/resources/"; //default file path
             SaveFileDialog saveFile = new SaveFileDialog();
             saveFile.Filter = "JSON Files|*.json";
             saveFile.AddExtension = true;
             saveFile.DefaultExt = ".json";
-            string saveName = path + fileName + ".json";         
+            string saveName = path + fileName + ".json"; //appends path to the filename which is from header
 
             if (!File.Exists(saveName))
             {
@@ -223,7 +223,7 @@ namespace NapierBank
                 sW.Flush();
                 sW.Close();
 
-            MessageBox.Show("Processed Message saved as: " + saveName);
+            MessageBox.Show("Processed Message saved as: " + saveName); //on save displays filepath
         }
 
 
@@ -251,11 +251,11 @@ namespace NapierBank
 
                 using (var reader = new StreamReader(filePath))
                 {
-                   string tempHeader = reader.ReadLine();
-                   string tempSender = reader.ReadLine();
+                    string tempHeader = reader.ReadLine();
+                    string tempSender = reader.ReadLine();
 
-                   txt_header.Text = tempHeader;
-                   txt_sender.Text = tempSender;
+                    txt_header.Text = tempHeader;
+                    txt_sender.Text = tempSender;
 
                     if (tempHeader.ToUpper().Contains("E"))
                     {
@@ -268,13 +268,17 @@ namespace NapierBank
                     {
                         string tempMessage = reader.ReadToEnd();
                         txt_msgBox.Text = tempMessage;
-                    }                    
+                    }
                 }
 
             }
             catch (FileNotFoundException error)
             {
                 MessageBox.Show(error.Message, "Error");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
             }
 
         }
@@ -283,5 +287,12 @@ namespace NapierBank
         {
             System.Environment.Exit(0);
         }
+
+        private void btn_viewMessage_Click(object sender, RoutedEventArgs e)
+        {
+            ViewMessages view = new ViewMessages(msgList);
+            view.Show();
+        }
+
     }
 }
