@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NapierBank", "NapierBank\NapierBank.csproj", "{367C4BDB-28BD-498C-B6B3-1FA36A7E08BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{367C4BDB-28BD-498C-B6B3-1FA36A7E08BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{367C4BDB-28BD-498C-B6B3-1FA36A7E08BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{367C4BDB-28BD-498C-B6B3-1FA36A7E08BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{367C4BDB-28BD-498C-B6B3-1FA36A7E08BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6173C981-9311-44AE-91EA-5874EC99F7D3}
+	EndGlobalSection
+EndGlobal
