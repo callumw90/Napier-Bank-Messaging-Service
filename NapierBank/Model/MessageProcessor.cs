@@ -21,13 +21,39 @@ namespace NapierBank.Model
         {
 
             //Console.WriteLine("Message Processor: " + header + sender + messageBody + subject);
+            if (header.Length != 9)
+            {
+                MessageBox.Show("Invalid Header Length");
+            }
+            else
+            {
+                header = header.Substring(0, 9);
+
+            }
+
 
             if (header.ToUpper().Contains("S"))
             {
+                if (messageBody.Length > 140)
+                {
+                    messageBody = messageBody.Substring(0, 140);
+                    return new SMSMessage(header, sender, messageBody);
+                }
                 return new SMSMessage(header, sender, messageBody);
             }
+
             else if (header.ToUpper().Contains("E"))
             {
+                if (messageBody.Length > 1028)
+                {
+                    messageBody = messageBody.Substring(0, 1028);
+                }
+
+                if (subject.Length > 20)
+                {
+                    subject = subject.Substring(0, 20);
+                }
+
                 if (subject.ToUpper().Contains("SIR"))
                 {
                     return new SIR_Email(header, sender, messageBody, subject);
@@ -37,8 +63,19 @@ namespace NapierBank.Model
                     return new EmailMessage(header, sender, messageBody, subject);
                 }
             }
+
             else if (header.ToUpper().Contains("T"))
             {
+                if (sender.Length > 15)
+                {
+                    sender = sender.Substring(0,15);
+                }
+
+                if (messageBody.Length > 140)
+                {
+                    messageBody = messageBody.Substring(0, 140);
+                }
+
                 return new TwitterMessage(header, sender, messageBody);
             }
 
