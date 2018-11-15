@@ -7,6 +7,11 @@ using Newtonsoft.Json;
 
 namespace NapierBank.Model
 {
+    /// <summary>
+    /// 
+    /// Serializes objects to JSON
+    /// 
+    /// </summary>
     class JSONSerializer
     {
 
@@ -22,6 +27,7 @@ namespace NapierBank.Model
             return json;
         }
 
+        //not implemented yet, for next version
         public static Message Deserializer<Message>(string json)
         {
             Message temp = JsonConvert.DeserializeObject<Message>(json, settings);

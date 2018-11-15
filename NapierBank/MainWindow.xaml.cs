@@ -22,6 +22,7 @@ namespace NapierBank
     /// </summary>
     public partial class NewMessage : Window
     {
+       
         private Message message;
         private List<Message> msgList = new List<Message>();
         private string filePath;
@@ -29,11 +30,13 @@ namespace NapierBank
         private Dictionary<string, int> mentions = null;
 
 
+        #region constructor
         public NewMessage()
         {
             InitializeComponent();
             txt_subject.IsEnabled = false;
         }
+        #endregion
 
         /*
          *
@@ -51,7 +54,7 @@ namespace NapierBank
 
         /*
          *
-         * Enables the subject field if email
+         * Enables the subject field if email is detected
          *
          */
         private void txt_header_TextChanged(object sender, TextChangedEventArgs e)
@@ -75,6 +78,7 @@ namespace NapierBank
         private void btn_process_Click(object sender, RoutedEventArgs e)
         {
 
+            //debug stuff
             //Console.WriteLine(txt_header.Text.Trim() + txt_sender.Text.Trim() + txt_msgBox.Text.Trim());
 
             try
@@ -102,6 +106,11 @@ namespace NapierBank
             }
         }
 
+        /// <summary>
+        /// gets all the stats for twitter messages
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_getStats_Click(object sender, RoutedEventArgs e)
         {
             trendingList = new Dictionary<string, int>();
@@ -283,11 +292,22 @@ namespace NapierBank
 
         }
 
+        /*
+         *
+         *Closes Program 
+         * 
+         */
         private void btn_exit_Click(object sender, RoutedEventArgs e)
         {
             System.Environment.Exit(0);
         }
 
+
+        /*
+         * 
+         *Opens view message window and passes it List of Messages 
+         * 
+         */
         private void btn_viewMessage_Click(object sender, RoutedEventArgs e)
         {
             ViewMessages view = new ViewMessages(msgList);

@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace NapierBank.Model
 {
+
     public abstract class Message
     {
         protected string header;
@@ -15,6 +16,12 @@ namespace NapierBank.Model
         protected string subject;
         protected string processedMessage;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="header"></param>
+        /// <param name="sender"></param>
+        /// <param name="messageBody"></param>
         public Message(string header, string sender, string messageBody)
         {
             Header = header;
@@ -23,6 +30,7 @@ namespace NapierBank.Model
 
             //Console.WriteLine("Message.cs: " + header + sender + processedMessage + subject);
         }
+
 
         protected abstract void ProcessMessage();
 

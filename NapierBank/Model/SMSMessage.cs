@@ -14,6 +14,12 @@ namespace NapierBank.Model
 
         private string filePath = @"D:/University/Year 3/TR1/Software Engineering/Napier Bank C#/NapierBank/NapierBank/resources/textwords.csv";
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="header"></param>
+        /// <param name="sender"></param>
+        /// <param name="messageBody"></param>
         public SMSMessage(string header, string sender, string messageBody) : base(header, sender, messageBody)
         {     
             ProcessMessage();

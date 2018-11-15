@@ -24,7 +24,8 @@ namespace NapierBank
         private Message tempMessage;
         private int i = 0;
 
-        public ViewMessages(List<Message> msgList)
+        #region Constructor
+        public ViewMessages(List<Message> msgList) //takes in list of Messages
         {
             this.msgList = msgList;
             i = 0;
@@ -40,13 +41,14 @@ namespace NapierBank
                     MessageBox.Show("No Messages", "Error");
                 }
             }
-            catch (ArgumentOutOfRangeException ex)
+            catch (ArgumentOutOfRangeException ex) //catches if msgList is empty
             {
                 System.Console.Write(ex.Message);
                 System.Console.Read();
                 MessageBox.Show("No Messages", "Error");
             }
         }
+        #endregion
 
         private void btn_Next_Click(object sender, RoutedEventArgs e)
         {
@@ -63,7 +65,7 @@ namespace NapierBank
                     MessageBox.Show("End of Messages", "Error");
                 }
             }
-            catch (ArgumentOutOfRangeException ex)
+            catch (ArgumentOutOfRangeException ex) //catches if at the end of the list
             {
                 System.Console.Write(ex.Message);
                 System.Console.Read();
@@ -86,7 +88,7 @@ namespace NapierBank
                     MessageBox.Show("No More Messages", "Error");
                 }
             }
-            catch (ArgumentOutOfRangeException ex)
+            catch (ArgumentOutOfRangeException ex) //catches if at the end of the list
             {
                 System.Console.Write(ex.Message);
                 System.Console.Read();

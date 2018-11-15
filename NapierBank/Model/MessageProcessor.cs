@@ -9,7 +9,14 @@ namespace NapierBank.Model
 {
     class MessageProcessor
     {
-
+        /// <summary>
+        /// Sorts messages into categories and creates them, then returns the object to be added to a list
+        /// </summary>
+        /// <param name="header"></param>
+        /// <param name="sender"></param>
+        /// <param name="messageBody"></param>
+        /// <param name="subject"></param>
+        /// <returns></returns>
         public Message SortMessage(string header, string sender, string messageBody, string subject)
         {
 
