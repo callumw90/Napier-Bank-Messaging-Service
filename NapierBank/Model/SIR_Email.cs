@@ -14,7 +14,7 @@ namespace NapierBank.Model
         private string sortCode;
 
         //not needed currently
-        // private string srtCodeRegex = @"^[0-9]{2}-[0-9]{2}-[0-9]{2}"; 
+        private string srtCodeRegex = @"^[0-9]{2}-[0-9]{2}-[0-9]{2}"; 
 
         //regex for urls
         private string regex = @"((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)";
@@ -44,10 +44,10 @@ namespace NapierBank.Model
             //MessageBox.Show(sortCode);
 
             //checks for sort code - not needed currently
-            /*foreach (Match match in Regex.Matches(messageBody, srtCodeRegex))
+            foreach (Match match in Regex.Matches(messageBody, srtCodeRegex))
             {
                 sortCode = match.Value;
-            }*/
+            }
 
             //checks message for regex and replaces with <URL Quarantined> then adding URL to list
             foreach (Match match in Regex.Matches(messageBody, regex)) //checks message for urls replaces them and adds it to a list
